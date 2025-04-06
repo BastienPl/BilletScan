@@ -1,3 +1,5 @@
+import os
+
 from dash import Dash, html
 import dash_bootstrap_components as dbc
 
@@ -21,6 +23,7 @@ app = Dash(
     __name__,
     external_stylesheets=EXTERNAL_STYLESHEETS,
     suppress_callback_exceptions=True,
+    assets_ignore='',
     **get_app_config()
 )
 
