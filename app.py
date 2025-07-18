@@ -1,5 +1,6 @@
 from dash import Dash, html
 import dash_bootstrap_components as dbc
+import os
 
 # Imports de tes composants
 from components.navbar import create_navbar
@@ -82,6 +83,6 @@ app.layout = html.Div([
 register_upload_callbacks(app)
 register_analysis_callbacks(app)
 
-# Démarrage
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port, debug=True)
